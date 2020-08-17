@@ -22,7 +22,8 @@ const styles = {
         margin: '20px auto 20px auto'
     },
     pageTitle: {
-        margin: '10px auto 20px auto'
+        margin: '10px auto 20px auto',
+        fontSize: 32,
     },
     textField: {
         margin: '10px auto 20px auto'
