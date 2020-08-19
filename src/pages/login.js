@@ -55,8 +55,10 @@ class login extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.UI.errors) return this.setState({ errors: nextProps.UI.errors })
-    }
+        if (nextProps.UI.errors) {
+          this.setState({ errors: nextProps.UI.errors });
+        }
+      }
 
     handleSubmit = (event) => {
         event.preventDefault();
