@@ -12,9 +12,11 @@ import CalendarToday from '@material-ui/icons/CalendarToday';
 import dayjs from 'dayjs';
 import Paper from '@material-ui/core/Paper';
 import IconButton from '@material-ui/core/IconButton';
-import EditIcon from '@material-ui/icons/Edit';
+import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import Tooltip from '@material-ui/core/Tooltip';
 import { logoutUser, uploadImage } from '../redux/actions/userActions';
+import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
+import EditDetails from './EditDetails';
 
 const styles = {
     paper: {
@@ -79,6 +81,10 @@ class Profile extends Component {
         fileInput.click();
     }
 
+    handleLogout = () => {
+        this.props.logoutUser();
+    }
+
     render() {
         const { classes, 
                 user: { credentials: {handle, createdAt, bio, imageUrl, location, website }, 
@@ -88,7 +94,6 @@ class Profile extends Component {
                          }
                     } = this.props; 
         console.log(this.props);
-
         
         let profileMarkup = !loading ? (
             authenticated ? (
@@ -99,7 +104,7 @@ class Profile extends Component {
                         <input type="file" id="imageInput" hidden="hidden" onChange={this.handleImageChange} />
                         <Tooltip title="Edit profile picture" placement="top">
                             <IconButton onClick={this.handleEditPicture} className="button">
-                                <EditIcon color="primary"/>
+                                <AddAPhotoIcon color="primary"/>
                             </IconButton>                            
                         </Tooltip>
                     </div>
@@ -130,6 +135,13 @@ class Profile extends Component {
                         <CalendarToday color="primary" />{' '}
                         <span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
                     </div>
+
+                    <Tooltip title="Logout" placement="top">
+                        <IconButton onClick={this.handleLogout}>
+                            <KeyboardReturn color="primary" />
+                        </IconButton>
+                    </Tooltip>
+                    <EditDetails />
                 </div>
             </Paper>
         ) : (
