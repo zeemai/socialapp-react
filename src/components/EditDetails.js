@@ -60,8 +60,6 @@ class EditDetails extends Component {
         this.mapUserDetailsToState(credentials)
     }
 
-
-
     render() {
         const {classes} = this.props
         return (
