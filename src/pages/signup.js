@@ -9,6 +9,7 @@ import Avatar from '@material-ui/core/Avatar';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 import { Link } from 'react-router-dom';
 
@@ -21,7 +22,7 @@ const styles = {
       textAlign: 'center'
     },
     image: {
-        margin: '20px auto 20px auto'
+        fontSize: 48
     },
     pageTitle: {
         margin: '10px auto 20px auto',
@@ -88,7 +89,7 @@ class signup extends Component {
             <Grid container className={classes.form}>
                 <Grid item sm />
                 <Grid item sm>
-                    <Avatar src={loginIcon} alt="login icon" className={classes.image} />
+                    <AccountCircleIcon className={classes.image} />
                     <Typography variant="h3" className={classes.pageTitle}>
                         Sign Up
                     </Typography>

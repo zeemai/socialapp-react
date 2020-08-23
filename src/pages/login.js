@@ -9,6 +9,7 @@ import Avatar from '@material-ui/core/Avatar';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 //redux
 import { connect } from 'react-redux';
@@ -21,7 +22,7 @@ const styles = {
     textAlign: 'center'
   },
   image: {
-      margin: '20px auto 20px auto'
+    fontSize: 48
   },
   pageTitle: {
       fontSize: 32,
@@ -82,7 +83,7 @@ class login extends Component {
             <Grid container className={classes.form}>
                 <Grid item sm />
                 <Grid item sm>
-                    <Avatar src={loginIcon} alt="login icon" className={classes.image} />
+                    <AccountCircleIcon className={classes.image} />
                     <Typography variant="h3" className={classes.pageTitle}>
                         Login
                     </Typography>
