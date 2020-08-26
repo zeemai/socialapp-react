@@ -36,6 +36,14 @@ import {
                 return {
                     ...state
                 }
+            case DELETE_SCREAM:
+                let indexDelete = state.screams.findIndex(
+                    (scream) => scream.screamId === action.payload
+                );
+                state.screams.splice(indexDelete, 1);
+                return {
+                    ...state
+                };
             default:
                 return state;
       }
