@@ -9,10 +9,9 @@ import IconButton from '@material-ui/core/IconButton';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Tooltip from '@material-ui/core/Tooltip';
-import AddIcon from '@material-ui/icons/Add';
 import HomeIcon from '@material-ui/icons/Home';
 import Notifications from '@material-ui/icons/Notifications';
-
+import PostScream from './PostScream';
 
 class Navbar extends Component {
 
@@ -24,11 +23,7 @@ class Navbar extends Component {
                 <Toolbar className="nav-container">
                     {authenticated ? (
                         <Fragment>
-                            <Tooltip title="Create a post" >
-                                <IconButton>
-                                    <AddIcon />
-                                </IconButton>
-                            </Tooltip>
+                            <PostScream />
                             <Link to="/">
                                 <Tooltip title="Home" >
                                     <IconButton>
