@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import Tooltip from '@material-ui/core/Tooltip';
 import HomeIcon from '@material-ui/icons/Home';
 import Notifications from '@material-ui/icons/Notifications';
-import PostScream from './PostScream';
+import PostScream from '../scream/PostScream';
 
 class Navbar extends Component {
 

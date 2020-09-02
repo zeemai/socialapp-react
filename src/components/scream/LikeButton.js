@@ -6,7 +6,7 @@ import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { likeScream, unlikeScream } from '../redux/actions/dataActions';
+import { likeScream, unlikeScream } from '../../redux/actions/dataActions';
 
 
 export class LikeButton extends Component {
@@ -29,8 +29,6 @@ export class LikeButton extends Component {
 
     render() {
         const { authenticated } = this.props.user;
-
-        console.log(this.props)
 
         const likeButton = !authenticated ? (
             <Tooltip title="Like">

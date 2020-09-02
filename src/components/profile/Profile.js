@@ -14,7 +14,7 @@ import Paper from '@material-ui/core/Paper';
 import IconButton from '@material-ui/core/IconButton';
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import Tooltip from '@material-ui/core/Tooltip';
-import { logoutUser, uploadImage } from '../redux/actions/userActions';
+import { logoutUser, uploadImage } from '../../redux/actions/userActions';
 import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 import EditDetails from './EditDetails';
 
@@ -93,7 +93,6 @@ class Profile extends Component {
                         //test
                          }
                     } = this.props; 
-        console.log(this.props);
         
         let profileMarkup = !loading ? (
             authenticated ? (

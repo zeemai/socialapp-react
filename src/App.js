@@ -6,7 +6,7 @@ import { ThemeProvider as MuiThemeProvider} from '@material-ui/core/styles'
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import jwtDecode from 'jwt-decode';
 
-import Navbar from './components/Navbar'
+import Navbar from './components/layout/Navbar'
 
 import home from './pages/home';
 import login from './pages/login';
@@ -17,7 +17,7 @@ import AuthRoute from './util/AuthRoute';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import { SET_AUTHENTICATED } from './redux/types';
-import { logoutUser, getUserdata, loginUser, getUserData } from './redux/actions/userActions';
+import { logoutUser, getUserData } from './redux/actions/userActions';
 import axios from 'axios';
 
 const theme = createMuiTheme({

@@ -13,10 +13,10 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore';
 import { connect } from 'react-redux';
-import { getScream } from '../redux/actions/dataActions';
+import { getScream } from '../../redux/actions/dataActions';
 import LikeButton from './LikeButton';
 import ChatIcon from '@material-ui/icons/Chat';
-
+import Comments from './Comments';
 
 const styles = {
     separator: {
@@ -40,6 +40,11 @@ const styles = {
     expandButton: {
         position: 'absolute',
         left: '90%'
+    },
+    separatorComment: {
+        width: '100%',
+        borderBottom: '1px solid egba(0,0,0,0.1)',
+        marginBottom: 20
     }
 }
 
@@ -59,7 +64,7 @@ class ScreamDialog extends Component {
         })
     }
     render() {
-        const { classes, scream: { screamId, body, createdAt, likeCount, commentCount, userImage, userHandle}, UI: {loading} } = this.props;
+        const { classes, scream: { screamId, body, createdAt, likeCount, commentCount, userImage, userHandle, comments}, UI: {loading} } = this.props;
         const dialogMarkup = loading ? (
             <CircularProgress size={150} thickness={2}/>
         ) : (
@@ -88,6 +93,8 @@ class ScreamDialog extends Component {
                     </Tooltip>
                     <span>{commentCount} Comments</span>
                 </Grid>
+                <hr className={classes.separatorComment} />
+                <Comments comments={comments} />
             </Grid>
         )
         
