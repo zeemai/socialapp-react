@@ -7,7 +7,6 @@ import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import CircularProgress from '@material-ui/core/CircularProgress'
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -15,6 +14,9 @@ import CloseIcon from '@material-ui/icons/Close';
 import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore';
 import { connect } from 'react-redux';
 import { getScream } from '../redux/actions/dataActions';
+import LikeButton from './LikeButton';
+import ChatIcon from '@material-ui/icons/Chat';
+
 
 const styles = {
     separator: {
@@ -77,6 +79,14 @@ class ScreamDialog extends Component {
                     <Typography variant="body1">
                         {body}
                     </Typography>
+                    <LikeButton screamId={screamId} />
+                    <span>{likeCount} Likes</span>
+                    <Tooltip title="comments" >
+                        <IconButton>
+                            <ChatIcon color="primary" />
+                        </IconButton>
+                    </Tooltip>
+                    <span>{commentCount} Comments</span>
                 </Grid>
             </Grid>
         )
