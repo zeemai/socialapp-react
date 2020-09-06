@@ -13,10 +13,11 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore';
 import { connect } from 'react-redux';
-import { getScream } from '../../redux/actions/dataActions';
+import { getScream, clearErrors } from '../../redux/actions/dataActions';
 import LikeButton from './LikeButton';
 import ChatIcon from '@material-ui/icons/Chat';
 import Comments from './Comments';
+import CommentForm from './CommentForm';
 
 const styles = {
     separator: {
@@ -62,6 +63,7 @@ class ScreamDialog extends Component {
         this.setState({
             open: false
         })
+        this.props.clearErrors();
     }
     render() {
         const { classes, scream: { screamId, body, createdAt, likeCount, commentCount, userImage, userHandle, comments}, UI: {loading} } = this.props;
@@ -94,6 +96,7 @@ class ScreamDialog extends Component {
                     <span>{commentCount} Comments</span>
                 </Grid>
                 <hr className={classes.separatorComment} />
+                <CommentForm screamId={screamId} />
                 <Comments comments={comments} />
             </Grid>
         )
@@ -125,7 +128,8 @@ ScreamDialog.propTypes = {
     screamId: PropTypes.string.isRequired,
     userHandle: PropTypes.string.isRequired,
     scream: PropTypes.object.isRequired,
-    UI: PropTypes.object.isRequired
+    UI: PropTypes.object.isRequired,
+    clearErrors: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
@@ -135,7 +139,7 @@ const mapStateToProps = (state) => ({
   
 const mapActionsToProps = {
     getScream,
-    //clearErrors
+    clearErrors
   };
 
 
