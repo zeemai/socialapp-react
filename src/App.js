@@ -11,6 +11,7 @@ import Navbar from './components/layout/Navbar'
 import home from './pages/home';
 import login from './pages/login';
 import signup from './pages/signup';
+import user from './pages/user'
 
 import AuthRoute from './util/AuthRoute';
 //redux
@@ -66,6 +67,7 @@ function App() {
                 <Route exact path="/" component={home} />
                 <AuthRoute exact path="/login" component={login}  />
                 <AuthRoute exact path="/signup" component={signup}  />
+                <Route exact path="/users/:handle" component={user}  />
               </Switch>
             </div>
           </Router>

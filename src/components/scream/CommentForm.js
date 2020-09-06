@@ -25,6 +25,7 @@ class CommentForm extends Component {
             this.setState({errors: nextProps.UI.errors})
         }
         if(!nextProps.UI.errors && !nextProps.UI.loading) {
+            // here to clean out the body and errors when successfully submitting a comment
             this.setState({ body: '', errors: {}})
         }
     }
