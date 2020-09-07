@@ -83,3 +83,13 @@ export const editUserDetails = (userDetails) => (dispatch) => {
         })
         .catch(err => console.log(err));
 }
+
+export const markNotificationsRead = (notificationIds) => dispatch => {
+    axios.post('/notifications', notificationIds)
+        .then(res => {
+            dispatch({
+                type: MARK_NOTIFICATIONS_READ
+            })
+        })
+        .catch(err => console.log(err))
+}
