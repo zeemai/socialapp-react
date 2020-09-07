@@ -17,6 +17,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import { logoutUser, uploadImage } from '../../redux/actions/userActions';
 import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 import EditDetails from './EditDetails';
+import ProfileSkeleton from '../../util/ProfileSkeleton';
 
 const styles = {
     paper: {
@@ -169,7 +170,9 @@ class Profile extends Component {
         </div>
         </Paper>
 
-        )) : (<p>loading...</p>)
+        )) : (
+            <ProfileSkeleton />
+        )
 
         return profileMarkup
     }
