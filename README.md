@@ -1,10 +1,20 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br />
+<p align="center">
+  <h3 align="center">Welcome to Social Media app ReadMe</h3>
+</p>
+
+## About The Project
+
+![makephotogallery net_1600203366](https://user-images.githubusercontent.com/46029164/93263921-54ee0580-f79e-11ea-8b06-7da38c86c6c0.jpg)
+
+This repository contains a web application: a Twitter-like Social media app where users can upload images, post, like, comment posts and get notifications. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), which is created using React, Redux, Express, Material UI & Firebase. This project has created a backend REST API server with Node.js and Express, as well as user authentication, image uploads, notifications, cloud functions using firebase cloud functions. This project has used [this tutorial](https://www.youtube.com/classsed) as reference.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
 ### `yarn start`
+Note: You will need to have your own API endpoint to replace the one in the code.
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
